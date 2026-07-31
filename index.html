@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olanyt — Cybersecurity Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0F1419;
+    --surface: #161C24;
+    --surface-hi: #1D2530;
+    --text: #E8ECEF;
+    --muted: #8B95A1;
+    --accent: #4FD1C5;
+    --accent-dim: #2C7A73;
+    --line: #263140;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header.hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(79,209,197,0.15);
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 6vw, 52px);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .bio {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 58ch;
+  }
+
+  /* signature element: a pulse trace that resolves into a waveform —
+     the nursing-monitor line becoming a signal-monitoring line */
+  .pulse {
+    margin: 40px 0 0;
+    width: 100%;
+    height: 40px;
+    opacity: 0.85;
+  }
+  .pulse path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw 1.8s ease-out forwards;
+  }
+  @keyframes draw {
+    to { stroke-dashoffset: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse path { animation: none; stroke-dashoffset: 0; }
+  }
+
+  section.projects {
+    padding: 64px 0;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .project {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .project:hover,
+  .project:focus-within {
+    border-color: var(--accent-dim);
+    background: var(--surface-hi);
+  }
+
+  .project-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .project-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 14px;
+    letter-spacing: 0.03em;
+  }
+
+  .project p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .project a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--accent-dim);
+    padding-bottom: 1px;
+  }
+
+  .project a:hover,
+  .project a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+
+  .project a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  footer {
+    padding: 48px 0 80px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  footer a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  footer a:hover, footer a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Available for junior cybersecurity / cloud roles</div>
+    <h1>Olanyt</h1>
+    <p class="bio">I'm transitioning from nursing into cybersecurity. Through the Expadox Lab mentorship program, I've worked hands-on with security tools and real project teams — from threat modeling to SIEM deployment. I'm working toward a junior cybersecurity or cloud security role.</p>
+
+    <svg class="pulse" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 L60,20 L75,5 L90,35 L105,20 L160,20 L172,14 L184,26 L196,20 L400,20" />
+    </svg>
+  </header>
+
+  <section class="projects">
+    <div class="section-label">Projects</div>
+
+    <article class="project">
+      <div class="project-title">OpsShield</div>
+      <div class="project-role">Security Team — Expadox Lab Cohort</div>
+      <p>Securing a Node.js/Prisma application with Paystack integration, with deployment to AWS and a Wazuh SIEM layer. My work covered GitHub-based code review, STRIDE threat modeling, and middleware coverage auditing — surfacing a webhook replay vulnerability gap and a missing token revocation flaw in the JWT implementation.</p>
+    </article>
+
+    <article class="project">
+      <div class="project-title">SecOpsAI</div>
+      <div class="project-role">Team Member 3</div>
+      <p>An Adversarial AI Detection Engineering system built as a cohort project. I handled MITRE ATT&CK Navigator updates, documentation completeness audits, and GitHub Issues creation.</p>
+    </article>
+
+    <article class="project">
+      <div class="project-title">FireOps — Team Quantum Shield</div>
+      <div class="project-role">Contributor</div>
+      <p>A Wazuh SIEM deployment project. I put together the team's presentations and professional documentation, including screenshot integration across deliverables.</p>
+    </article>
+  </section>
+
+  <footer>
+    Built while training in cybersecurity — Expadox Lab mentorship program.
+  </footer>
+</div>
+
+</body>
+</html>
